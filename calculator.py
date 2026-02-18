@@ -21,6 +21,7 @@ def divide(a, b):
     return a / b
 
 def calculate_average(numbers):
-    """Calculate average of a list of numbers"""
-    # BUG: Returns wrong result for empty list
+    """Calculate average of a list of numbers, fixing bug"""
+    if not numbers:
+        raise ValueError("Cannot calculate average of empty list")
     return sum(numbers) / len(numbers)
