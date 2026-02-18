@@ -61,4 +61,4 @@ class Calculator:
         """Get the last calculation from history"""
         if not self.history:
             raise ValueError("No calculations in history")
-        return self.history[-1]
+        return self.history
