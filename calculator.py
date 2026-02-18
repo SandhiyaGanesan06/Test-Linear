@@ -1,5 +1,5 @@
 """
-Calculator class implementation - FIXED VERSION
+Calculator class implementation with intentional bugs for Linear testing
 """
 
 class Calculator:
@@ -29,8 +29,7 @@ class Calculator:
     
     def divide(self, a, b):
         """Divide a by b"""
-        if b == 0:
-            raise ValueError("Cannot divide by zero")
+        # BUG: No zero division check
         result = a / b
         self.history.append(f"{a} / {b} = {result}")
         return result
@@ -43,8 +42,7 @@ class Calculator:
     
     def calculate_average(self, numbers):
         """Calculate average of a list of numbers"""
-        if not numbers:
-            raise ValueError("Cannot calculate average of empty list")
+        # BUG: Returns wrong result for empty list
         result = sum(numbers) / len(numbers)
         self.history.append(f"avg({numbers}) = {result}")
         return result
@@ -59,6 +57,5 @@ class Calculator:
     
     def get_last_result(self):
         """Get the last calculation from history"""
-        if not self.history:
-            raise ValueError("No calculations in history")
-        return self.history
+        # BUG: No check for empty history
+        return self.history[-1]
