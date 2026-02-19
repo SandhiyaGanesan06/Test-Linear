@@ -43,9 +43,9 @@ class Calculator:
     
     def calculate_average(self, numbers):
         """Calculate average of a list of numbers"""
-        # BUG: Returns wrong result for empty list
-        result = sum(numbers) / len(numbers)
-        self.history.append(f"avg({numbers}) = {result}")
+        if numbers:
+            result = sum(numbers) / len(numbers)
+            self.history.append(f"avg({numbers}) = {result}")
         return result
     
     def get_history(self):
