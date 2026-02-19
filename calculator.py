@@ -29,7 +29,8 @@ class Calculator:
     
     def divide(self, a, b):
         """Divide a by b"""
-        # BUG: No zero division check
+        if b == 0:
+            raise ValueError("Cannot divide by zero")
         result = a / b
         self.history.append(f"{a} / {b} = {result}")
         return result
